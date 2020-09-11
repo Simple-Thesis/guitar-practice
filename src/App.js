@@ -1,6 +1,11 @@
+//Imports
 import React from 'react';
+//Assets
 import logo from './logo.svg';
-import './App.css';
+//Style
+import './styles/App.css';
+//Utilities
+import {Helpers} from './utilities';
 
 const notes = {
   letters: ['A', 'B', 'C', 'D', 'E', 'F', 'G'],
@@ -15,7 +20,7 @@ class App extends React.Component {
     this.state = {
       note: 'A',
       showAnswers: true,
-      string: this.getRandomInt(1, 6),
+      string: Helpers.GetRandomInt(1, 6),
       useChromatic: true
     }
   }
@@ -27,36 +32,21 @@ class App extends React.Component {
   //METHODS
   changeNotes = () => {
     if (this.state.showAnswers){
-      let nthString = this.getNthInt(this.state.string);
+      let nthString = Helpers.GetNthInt(this.state.string);
       alert(`${this.state.note} is on the ${this.calculateFret()} fret of the ${nthString} string`);
     }
 
-    let string = this.getRandomInt(1, 6);
+    let string = Helpers.GetRandomInt(1, 6);
     let note = this.getRandomNote();
 
     this.setState({note, string});
   }
-  getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-  }
   getRandomNote = () => {
     if (this.state.useChromatic){
-      return notes.chromatic_all[this.getRandomInt(0, notes.chromatic_all.length - 1)];
+      return notes.chromatic_all[Helpers.GetRandomInt(0, notes.chromatic_all.length - 1)];
     }
 
-    return notes.letters[this.getRandomInt(0, notes.letters.length - 1)];
-  }
-  getNthInt = (n) => {
-    switch (n) {
-      case 1:
-        return '1st';
-      case 2: 
-        return '2nd';
-      case 3: 
-        return '3rd';
-      default:
-        return n + 'th';
-    }
+    return notes.letters[Helpers.GetRandomInt(0, notes.letters.length - 1)];
   }
   calculateFret = () => {
     return this.findFret();
@@ -82,7 +72,7 @@ class App extends React.Component {
 
     let fret = arr.indexOf(this.state.note);
 
-    return this.getNthInt(fret);
+    return Helpers.GetNthInt(fret);
   }
   getOpenNote = (n) => {
     switch (n) {
