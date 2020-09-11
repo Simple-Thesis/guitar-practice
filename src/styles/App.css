@@ -4,6 +4,12 @@
   /* padding: 0em; */
   height: 100vh;
 }
+.view {
+  text-align: center;
+  background-color: #282c34;
+  /* padding: 0em; */
+  height: 100vh;
+}
 
 .App-logo {
   height: 40vmin;
