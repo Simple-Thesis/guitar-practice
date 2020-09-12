@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { urls } from '../common/constants'
 
 class Home extends Component {
-    goToTest = () => {
-        this.props.history.push(urls.fretboardTests);
+    goTo = (url) => {
+        this.props.history.push(url)
     }
     render () {
         return (
@@ -12,7 +12,19 @@ class Home extends Component {
                 <h1>Welcome</h1>
                 </div>
                 <div className='horizontally-padded-container'>
-                    <button className='challenge-button' onClick={this.goToTest}>Fretboard Test</button>
+                    <button className='challenge-button' onClick={() => this.goTo(urls.fretboardTests)}>Fretboard Test</button>
+                </div>
+                <div className='horizontally-padded-container'>
+                    <button className='challenge-button' onClick={() => this.goTo(urls.blog)}>Blog</button>
+                </div>
+                <div className='horizontally-padded-container'>
+                    <button className='challenge-button' onClick={() => this.goTo(urls.metronome)}>Metronome</button>
+                </div>
+                <div className='horizontally-padded-container'>
+                    <button className='challenge-button' onClick={() => this.goTo(urls.resources)}>Resources</button>
+                </div>
+                <div className='horizontally-padded-container'>
+                    <button className='challenge-button' onClick={() => this.goTo(urls.tuner)}>Tuner</button>
                 </div>
             </div>
         )

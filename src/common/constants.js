@@ -1,7 +1,11 @@
 const urls = {
+    blog: '/blog',
     fretboardTests: '/frets',
     home: '/',
-    profile: '/profile'
+    metronome: '/metronome',
+    profile: '/profile',
+    resources: '/resources',
+    tuner: '/tuner'
 }
 
 export {urls};

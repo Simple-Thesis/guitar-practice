@@ -1,0 +1,48 @@
+/* TAGS */
+h1, h2, h3, h4{
+    color: #414040;
+    padding: 0px;
+    margin: 0px;
+}
+h1 {
+  color: #ffffff;
+  font-size: 4em;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+h2{
+  font-size: 2.5em;
+}
+h3{
+  font-size: 7em;
+}
+h4{
+  font-size: 1.5em;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+/* CLASSES */
+.App-header {
+  background-color: green;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.checkbox-text{
+  display: inline-block;
+  color: #ffffff;
+  padding: 0px;
+  margin: 0px;
+}
+.page-description{
+  color: #ffffff;
+  font-style: italic;
+}
+.strike{
+  text-decoration: line-through;
+}
